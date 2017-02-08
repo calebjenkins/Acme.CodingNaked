@@ -35,7 +35,7 @@ namespace SimpleCalculationsLib.Tests
 			result.ShouldBeGreaterThan<int>(4);
 			result.ShouldBeLessThanOrEqualTo<int>(10);
 
-			result.ShouldEqual<int>(result);
+			result.ShouldEqual<int>(expected);
 		}
 
 	}

@@ -38,7 +38,7 @@ namespace SlightlyHarderLib.Tests
 		public void On_Wed_Should_Be_Blue()
 		{
 			var dtMock = new Mock<IDateTime>();
-			dtMock.Setup(m => m.Now).Returns(wednesday);
+			dtMock.Setup(m => m.Now).Returns(wednesday).Verifiable();
 			dt = dtMock.Object;
 
 			string expected = "Blue";

@@ -11,7 +11,7 @@ namespace SlightlyHarderLib.Tests
 	[TestClass()]
 	public class FavoriteColorGenerator_When_Getting_
 	{
-		// [TestMethod()]
+		//[TestMethod()]
 		public void On_Tuesday_Should_Be_Yellow()
 		{
 			string expected = "Yellow";
