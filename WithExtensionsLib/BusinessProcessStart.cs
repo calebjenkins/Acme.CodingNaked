@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Common.Logging;
 using WithExtensionsLib.Extensions;
 
 namespace WithExtensionsLib
@@ -8,10 +9,12 @@ namespace WithExtensionsLib
 	{
 		private ISuperImportantBusinessTool bt;
 		private int TimingFromConfig = 100;
+		private ILog _logger;
 
-		public BusinessProcessStart(ISuperImportantBusinessTool bt)
+		public BusinessProcessStart(ISuperImportantBusinessTool bt, ILog logger)
 		{
 			this.bt = bt;
+			_logger = logger;
 		}
 
 		public void DoTheThing()
@@ -34,6 +37,7 @@ namespace WithExtensionsLib
 			else
 			{
 				// Log Failure
+				_logger.Info("Reset Failed");
 			}
 
 		}
