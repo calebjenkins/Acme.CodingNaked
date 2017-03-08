@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithExtensionsLibTests", "W
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtensionMethods", "ExtensionMethods", "{0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithInjectableExtensionsLib", "WithInjectableExtensionsLib\WithInjectableExtensionsLib.csproj", "{7441C860-2337-4BDE-A4C2-03BFF71D31EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithInjectableExtensionsLibTests", "WithInjectableExtensionsLibTests\WithInjectableExtensionsLibTests.csproj", "{6DF93820-098D-41B8-86A1-464CBF886A2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7441C860-2337-4BDE-A4C2-03BFF71D31EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7441C860-2337-4BDE-A4C2-03BFF71D31EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7441C860-2337-4BDE-A4C2-03BFF71D31EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7441C860-2337-4BDE-A4C2-03BFF71D31EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +74,7 @@ Global
 		{1F87E9C2-2DE8-4344-84D2-6CEDDE54E7DA} = {483F3E16-27BC-461E-AEED-D9CF762C9C6D}
 		{A1BCDFE9-4B94-47B9-8640-C8325BB629DC} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
 		{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
+		{7441C860-2337-4BDE-A4C2-03BFF71D31EA} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
+		{6DF93820-098D-41B8-86A1-464CBF886A2E} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
 	EndGlobalSection
 EndGlobal

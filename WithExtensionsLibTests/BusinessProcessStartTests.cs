@@ -13,7 +13,7 @@ namespace WithExtensionsLib.Tests
 	public class BusinessProcessStartTests
 	{
 		[TestMethod()]
-		public void DoTheThing_should_reset_the_process()
+		public void DoTheThing_should_Reset_the_Process()
 		{
 			// Arrange
 			var btMock = new Mock<ISuperImportantBusinessTool>();
@@ -28,7 +28,7 @@ namespace WithExtensionsLib.Tests
 		}
 
 		[TestMethod()]
-		public void DoTheThing_should_Start_SetTiming_Stop_the_process()
+		public void DoTheThing_should_Stop_SetTiming_Start_the_process()
 		{
 			// Arrange
 			var btMock = new Mock<ISuperImportantBusinessTool>();
