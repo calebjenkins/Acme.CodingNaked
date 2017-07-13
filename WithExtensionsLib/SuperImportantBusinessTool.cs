@@ -25,7 +25,7 @@ namespace WithExtensionsLib
 
 		#region "Hiding at start - Peak strategy"
 
-		//public bool Running
+		//public bool isRunning
 		//{
 		//	get { return _running; }
 		//}

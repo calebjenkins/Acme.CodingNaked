@@ -4,16 +4,16 @@ namespace WithExtensionsLib.Extensions2
 {
 	public class BusinessToolExtensionsImp: IBusinessToolExtensions
 	{
-		public bool Reset(ISuperImportantBusinessTool bt, int Timing)
+		public bool Reset(ISuperImportantBusinessTool bt)
 		{
-			if (Timing.Random() % 2 == 0)
+			try
 			{
 				bt.Stop();
-				bt.OtherReallyReallyImportantStuff(Timing);
-				bt.Start();
+				bt.OtherReallyReallyImportantStuff(15);
+				bt.Start();	
 				return true;
 			}
-			else
+			catch
 			{
 				return false;
 			}
@@ -22,19 +22,18 @@ namespace WithExtensionsLib.Extensions2
 
 	public interface IBusinessToolExtensions
 	{
-		bool Reset(ISuperImportantBusinessTool bt, int Timing);
+		bool Reset(ISuperImportantBusinessTool bt);
 	}
+
 
 	public static class BusinessToolExtensions
 	{
 		public static IBusinessToolExtensions Implementation = new BusinessToolExtensionsImp();
 
-		public static bool Reset(this ISuperImportantBusinessTool bt, int Timing)
+		public static bool Reset(this ISuperImportantBusinessTool bt)
 		{
-			return Implementation.Reset(bt, Timing);
+			return Implementation.Reset(bt);
 		}
-
-
 
 		// Extra Stuff //
 		public static int Random(this int number)
