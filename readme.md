@@ -3,6 +3,7 @@
 [![.github/workflows/ci.yml](https://github.com/calebjenkins/Acme.CodingNaked/actions/workflows/ci.yml/badge.svg)](https://github.com/calebjenkins/Acme.CodingNaked/actions/workflows/ci.yml)
 
 ### Unit testing those hard to reach places
+Sample Code for one of my most popular talks on Automated Unit Testing (TDD / BDD)
 
 ### Description
 Code coverage with quality unit tests are your first line of defense to reducing technical debt, increasing code quality and accelerating your ability to change and adapt code (without breaking it) while continuing to add new features. Most TDD sessions focus on the easy to test areas of your code base that are almost never what you experience getting back to your desk. Come learn why TDD is not a fancy practice for the coding elite, but an understandable, obtainable and practical approach to delivering value for every developer, and how, when done properly, will increase communication and design between the business stake holders and developers.
@@ -19,4 +20,5 @@ We will focus on practical steps to moving towards & embracing TDD. We’ll over
 Quality unit tests are your first line of defense to reducing technical debt and accelerate your ability to change and adapt code (without breaking it) while continuing to add new features. Come learn why TDD is an understandable, obtainable and practical approach to delivering.
 
 [Sessionize](https://sessionize.com/s/calebjenkins/coding_naked__unit_testing_those_ha/18992)
+
 [SlideShare](https://www.slideshare.net/calebjenkins/coding-naked)
