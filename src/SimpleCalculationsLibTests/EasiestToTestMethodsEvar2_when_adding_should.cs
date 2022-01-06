@@ -24,7 +24,7 @@ namespace SimpleCalculationsLib.Tests
             var result = sut.Add(2, 2);
 
             result.Should<int>().Be(expected);
-            //--------//
+                 //--------//
         }
 
         [TestMethod()]
