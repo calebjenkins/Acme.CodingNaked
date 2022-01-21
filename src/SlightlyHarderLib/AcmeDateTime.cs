@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace SlightlyHarderLib
 {
-	public class QLDateTime: IDateTime
+	public class AcmeDateTime: IDateTime
 	{
 		public DateTime Now
 		{

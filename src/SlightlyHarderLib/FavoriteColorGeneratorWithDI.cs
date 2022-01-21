@@ -11,6 +11,10 @@ namespace SlightlyHarderLib
 		{
 			this.dt = dt;
 		}
+
+		// Poorman's DI
+        public FavoriteColorGeneratorWithDI() : this (new AcmeDateTime()) {  }
+
 		public string GetFavorite()
 		{
 			if (dt.Now.DayOfWeek == DayOfWeek.Tuesday)

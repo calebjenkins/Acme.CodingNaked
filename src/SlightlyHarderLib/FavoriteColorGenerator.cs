@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,10 @@ namespace SlightlyHarderLib
 	 {
 		public string GetFavorite()
 		{
-			if(DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
+			var today = DateTime.Now;
+			Debug.WriteLine($"Today is {today.DayOfWeek}");
+
+			if(today.DayOfWeek == DayOfWeek.Tuesday)
 			{
 				return "Yellow";
 			}
@@ -21,29 +25,30 @@ namespace SlightlyHarderLib
 		}
 	}
 
-	public class BusinessCounter
-	{
-		private int _counter;
-		private ILogger _logger;
+    public class BusinessCounter : IBusinessCounter
+    {
+        private int _counter;
+        private ILogger _logger;
 
-		public BusinessCounter(ILogger logger)
-		{
-			_logger = logger;
-			_counter = 0;
-		}
+        public BusinessCounter(ILogger logger)
+        {
+            _logger = logger;
+            _counter = 0;
+        }
 
-		public int CounterValue { get { return _counter; } }
+		// Not in Interface -- added for tests
+        public int CounterValue { get { return _counter; } }
 
-		public void Count()
-		{
-			if (_counter++ % 3 == 0)
-			{
-				_logger.Info("Counter threshold reached");
-			}
-		}
-	}
+        public void Count()
+        {
+            if (_counter++ % 3 == 0)
+            {
+                _logger.Info("Counter threshold reached");
+            }
+        }
+    }
 
-	public interface ILogger
+    public interface ILogger
 	{
 		void Log(LogType logType, string Message);
 	}
@@ -81,7 +86,7 @@ namespace SlightlyHarderLib
 		}
 	}
 
-
+	// Wraper Class - wraps around the used extension methods
 	public class MyAppLogger : myApp.ILogger
 	{
 		ILogger _logger;

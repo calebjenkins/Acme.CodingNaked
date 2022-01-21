@@ -1,29 +1,39 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculationsLib", "./src/SimpleCalculationsLib\SimpleCalculationsLib.csproj", "{3C6C5C6F-A325-4109-B0DC-ADF770C5F6AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCalculationsLib", "src\SimpleCalculationsLib\SimpleCalculationsLib.csproj", "{3C6C5C6F-A325-4109-B0DC-ADF770C5F6AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculationsLibTests", "./src/SimpleCalculationsLibTests\SimpleCalculationsLibTests.csproj", "{FAE7DB80-D286-45A8-9A57-4E47759BB4B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCalculationsLibTests", "src\SimpleCalculationsLibTests\SimpleCalculationsLibTests.csproj", "{FAE7DB80-D286-45A8-9A57-4E47759BB4B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Easy", "Easy", "{8BBD6F9E-40F9-45DD-9483-ABE48643679A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightlyHarderLib", "./src/SlightlyHarderLib\SlightlyHarderLib.csproj", "{AD2B4849-0BCF-453F-8425-75A021F33A08}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlightlyHarderLib", "src\SlightlyHarderLib\SlightlyHarderLib.csproj", "{AD2B4849-0BCF-453F-8425-75A021F33A08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightlyHarderLibTests", "./src/SlightlyHarderLibTests\SlightlyHarderLibTests.csproj", "{1F87E9C2-2DE8-4344-84D2-6CEDDE54E7DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SlightlyHarderLibTests", "src\SlightlyHarderLibTests\SlightlyHarderLibTests.csproj", "{1F87E9C2-2DE8-4344-84D2-6CEDDE54E7DA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SlightlyHarder", "SlightlyHarder", "{483F3E16-27BC-461E-AEED-D9CF762C9C6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithExtensionsLib", "./src/WithExtensionsLib\WithExtensionsLib.csproj", "{A1BCDFE9-4B94-47B9-8640-C8325BB629DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithExtensionsLib", "src\WithExtensionsLib\WithExtensionsLib.csproj", "{A1BCDFE9-4B94-47B9-8640-C8325BB629DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithExtensionsLibTests", "./src/WithExtensionsLibTests\WithExtensionsLibTests.csproj", "{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithExtensionsLibTests", "src\WithExtensionsLibTests\WithExtensionsLibTests.csproj", "{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtensionMethods", "ExtensionMethods", "{0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithInjectableExtensionsLib", "./src/WithInjectableExtensionsLib\WithInjectableExtensionsLib.csproj", "{7441C860-2337-4BDE-A4C2-03BFF71D31EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithInjectableExtensionsLib", "src\WithInjectableExtensionsLib\WithInjectableExtensionsLib.csproj", "{7441C860-2337-4BDE-A4C2-03BFF71D31EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WithInjectableExtensionsLibTests", "./src/WithInjectableExtensionsLibTests\WithInjectableExtensionsLibTests.csproj", "{6DF93820-098D-41B8-86A1-464CBF886A2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WithInjectableExtensionsLibTests", "src\WithInjectableExtensionsLibTests\WithInjectableExtensionsLibTests.csproj", "{6DF93820-098D-41B8-86A1-464CBF886A2E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{11655921-3A11-4B6D-9524-9F596A45C9A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB3E9094-2931-4C31-811A-9918F6E5B567}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightlyHarderTests_w_Fakes", "src\SlightlyHarderTests_w_Fakes\SlightlyHarderTests_w_Fakes.csproj", "{A1960EC7-5BF4-42E1-8360-9BFF032351AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +73,10 @@ Global
 		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DF93820-098D-41B8-86A1-464CBF886A2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1960EC7-5BF4-42E1-8360-9BFF032351AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1960EC7-5BF4-42E1-8360-9BFF032351AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1960EC7-5BF4-42E1-8360-9BFF032351AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1960EC7-5BF4-42E1-8360-9BFF032351AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,11 +84,18 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3C6C5C6F-A325-4109-B0DC-ADF770C5F6AC} = {8BBD6F9E-40F9-45DD-9483-ABE48643679A}
 		{FAE7DB80-D286-45A8-9A57-4E47759BB4B5} = {8BBD6F9E-40F9-45DD-9483-ABE48643679A}
+		{8BBD6F9E-40F9-45DD-9483-ABE48643679A} = {11655921-3A11-4B6D-9524-9F596A45C9A7}
 		{AD2B4849-0BCF-453F-8425-75A021F33A08} = {483F3E16-27BC-461E-AEED-D9CF762C9C6D}
 		{1F87E9C2-2DE8-4344-84D2-6CEDDE54E7DA} = {483F3E16-27BC-461E-AEED-D9CF762C9C6D}
+		{483F3E16-27BC-461E-AEED-D9CF762C9C6D} = {11655921-3A11-4B6D-9524-9F596A45C9A7}
 		{A1BCDFE9-4B94-47B9-8640-C8325BB629DC} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
 		{B7FA03C8-9E48-4B55-95BA-1A2C1B2FC51C} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
+		{0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A} = {11655921-3A11-4B6D-9524-9F596A45C9A7}
 		{7441C860-2337-4BDE-A4C2-03BFF71D31EA} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
 		{6DF93820-098D-41B8-86A1-464CBF886A2E} = {0D5EC5F6-6A1A-4DD5-ACBE-F6048A0C535A}
+		{A1960EC7-5BF4-42E1-8360-9BFF032351AC} = {483F3E16-27BC-461E-AEED-D9CF762C9C6D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4B26F84A-4649-4AC7-B03B-C2A592205F63}
 	EndGlobalSection
 EndGlobal
