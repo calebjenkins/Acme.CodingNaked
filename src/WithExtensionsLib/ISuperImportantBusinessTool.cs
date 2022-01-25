@@ -1,6 +1,6 @@
 ﻿namespace WithExtensionsLib
 {
-	public interface ISuperImportantBusinessTool
+    public interface ISuperImportantBusinessTool
 	{
 		void OtherReallyReallyImportantStuff(int Timing);
 		void Start();

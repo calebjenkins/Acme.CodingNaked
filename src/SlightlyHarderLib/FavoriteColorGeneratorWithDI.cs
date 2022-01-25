@@ -7,20 +7,18 @@ namespace SlightlyHarderLib
 	{
 		IDateTime dt;
 
+		// Poor Man's DI
+		public FavoriteColorGeneratorWithDI() : this(new AcemDateTime()) { }
+
+		// We pass this in for testability.. 
 		public FavoriteColorGeneratorWithDI(IDateTime dt)
 		{
 			this.dt = dt;
 		}
 		public string GetFavorite()
 		{
-			if (dt.Now.DayOfWeek == DayOfWeek.Tuesday)
-			{
-				return "Yellow";
-			}
-			else
-			{
-				return "Blue";
-			}
+			return (dt.Now.DayOfWeek == DayOfWeek.Tuesday) ?
+				"Yellow" : "Blue";
 		}
 	}
 }
