@@ -7,4 +7,12 @@ namespace SlightlyHarderLib
 	{
 		DateTime Now { get; }
 	}
+
+	public class AcemDateTime : IDateTime
+	{
+		public DateTime Now
+		{
+			get { return DateTime.Now; }
+		}
+	}
 }

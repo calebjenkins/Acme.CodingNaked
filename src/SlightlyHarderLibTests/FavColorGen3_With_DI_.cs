@@ -6,25 +6,28 @@ using Moq;
 namespace SlightlyHarderLib.Tests
 {
 	[TestClass()]
-	public class FavoriteColorGenerator3_When_Getting_With_DI
+	public class FavColorGen3_With_DI_
 	{
 		IDateTime dt;
-		DateTime tuesday = new DateTime(2017, 1, 31);
-		DateTime wednesday = new DateTime(2017, 2, 1);
+		DateTime tuesday;
+		DateTime wednesday;
 
 
 		[TestInitialize]
 		public void SetUp()
 		{
-			var dtMock = new Mock<IDateTime>();
-			dtMock.Setup(m => m.Now).Returns(tuesday);
-			dt = dtMock.Object;
+			tuesday = new DateTime(2017, 1, 31);
+			wednesday = new DateTime(2017, 2, 1);
 		}
 
 
 		[TestMethod()]
 		public void On_Tuesday_Should_Be_Yellow()
 		{
+			var dtMock = new Mock<IDateTime>();
+			dtMock.Setup(m => m.Now).Returns(tuesday);
+			dt = dtMock.Object;
+
 			string expected = "Yellow";
 			var colors = new FavoriteColorGeneratorWithDI(dt);
 
