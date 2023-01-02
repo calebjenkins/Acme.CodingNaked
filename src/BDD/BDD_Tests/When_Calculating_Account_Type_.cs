@@ -21,12 +21,14 @@ public class When_Calculating_Account_Type_with_no_trips_
 public class When_Calculating_Account_Type_less_than_5000_trips_
 {
     private Account _act;
+    private TripService serv = new TripService();
+
     public When_Calculating_Account_Type_less_than_5000_trips_()
     {
         List<Trip> trips = new List<Trip>()
         {
-            new Trip(1000),
-            new Trip(500)
+            serv.Purchase(1000),
+            serv.Purchase(500)
         };
         _act = new Account("123", trips);
     }
@@ -48,14 +50,16 @@ public class When_Calculating_Account_Type_less_than_5000_trips_
 public class When_Calculating_Account_Type_between_5000_to_10000_Points_
 {
     private Account _act;
+    private TripService serv = new TripService();
+
     public When_Calculating_Account_Type_between_5000_to_10000_Points_()
     {
         List<Trip> trips = new List<Trip>()
         {
-            new Trip(1000),
-            new Trip(500),
-            new Trip(2000),
-            new Trip(3000)
+            serv.Purchase(1000),
+            serv.Purchase(500),
+            serv.Purchase(2000),
+            serv.Purchase(3000)
         };
         _act = new Account("123", trips);
     }
@@ -77,14 +81,15 @@ public class When_Calculating_Account_Type_between_5000_to_10000_Points_
 public class When_Calculating_AccountType_with_more_than_10000_trips_
 {
     private Account _act;
+    private TripService serv = new TripService();
     public When_Calculating_AccountType_with_more_than_10000_trips_()
     {
         List<Trip> trips = new List<Trip>()
         {
-            new Trip(2000),
-            new Trip (7000),
-            new Trip (10000),
-            new Trip(500)
+            serv.Purchase(2000),
+            serv.Purchase(7000),
+            serv.Purchase(10000),
+            serv.Purchase(500)
         };
         _act = new Account("123", trips);
     }
