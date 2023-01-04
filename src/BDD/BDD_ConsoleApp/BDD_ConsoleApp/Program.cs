@@ -12,14 +12,9 @@ var container = new Lamar.Container((x) =>
         s.WithDefaultConventions();
         s.AssemblyContainingType<Account>();
         });
-    x.For<IDateTime>().Use<DateTimeProvider>().Singleton();
+
     x.For<Func<DateTime>>().Add(() => Sunday);
     //x.For<Func<DateTime>>().Add(() => DateTime.Now);
-
-    //x.For<IAccountService>().Use<AccountService>()
-    //  .Setter<Func<DateTime>>().Is(() => Sunday);
-    //.Setter<Func<DateTime>>().Is(() => Wednesday);
-    //.Setter<Func<DateTime>>().Is(() => DateTime.Now);
 });
 
 
@@ -34,4 +29,20 @@ Console.WriteLine("Status: " + act.CalculateAccountType().ToString());
 Console.WriteLine("Discount: " + act.DiscountAmount()); 
 Console.WriteLine("Price: " + act.CalculateTripPrice(tripServ.Purchase(10)));
 
+Console.ReadLine();
+
+List<Trip> trips = new();
+
+for(int x= 1; x <= 10; x++)
+{
+    trips.Add(tripServ.Purchase(x));
+    Thread.Sleep(1000*x);
+    Console.Write(x + "... ");
+}
+Console.WriteLine();
+Console.WriteLine("Trips with TimeStamps");
+foreach(Trip tr in trips)
+{
+    Console.WriteLine(tr.ToString()); 
+}
 Console.ReadLine();

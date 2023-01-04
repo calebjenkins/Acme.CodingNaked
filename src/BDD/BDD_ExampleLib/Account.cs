@@ -75,7 +75,7 @@ namespace BDD_ExampleLib
         }
     }
 
-    public record Trip (int Points, string Confirmation, DateTime PurchaseDate);
+    public record Trip (int Points, string Confirmation, DateTime PurchaseDate, DateTime PurchaseDateProp);
 
     public enum AccountType
     {

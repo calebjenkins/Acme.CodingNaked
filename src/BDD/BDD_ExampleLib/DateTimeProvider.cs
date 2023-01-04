@@ -1,10 +1,10 @@
 ﻿namespace BDD_ExampleLib
 {
-    public class DateTimeProvider : IDateTime
+    public class DateTimeProvider : IDateTimeProvider
     {
         public DateTime Now () => DateTime.Now;
     }
-    public interface IDateTime
+    public interface IDateTimeProvider
     {
         DateTime Now();
     }
