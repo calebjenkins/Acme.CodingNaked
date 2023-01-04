@@ -1,4 +1,6 @@
-﻿namespace BDD_ExampleLib;
+﻿using BDD_ExampleLib.Models;
+
+namespace BDD_ExampleLib;
 
 public interface IAccountService
 {
