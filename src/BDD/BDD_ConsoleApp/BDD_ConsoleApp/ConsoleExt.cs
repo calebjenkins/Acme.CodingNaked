@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BDD_ConsoleApp;
 
-public static class ConsoleExtensions
+public static class ConsoleExt
 {
     public static void Label(string text)
     {
@@ -24,11 +24,31 @@ public static class ConsoleExtensions
 
     }
 
+    public static void Line(int length = 20)
+    {
+        Print ("-", length);
+        Console.WriteLine();
+        Console.WriteLine();
+    }
+
     private static void Print(string text, int times = 1)
     {
         for (int x = 0; x < times;x++)
         {
             Console.Write(text);
         }
+    }
+
+    public static void Write(this ConsoleColor color, string text)
+    {
+        var currentColor = Console.ForegroundColor;
+        Console.ForegroundColor = color;
+        Console.Write(text);
+        Console.ForegroundColor = currentColor;
+    }
+    public static void WriteLine(this ConsoleColor color, string text)
+    {
+        color.Write(text);
+        Console.WriteLine ();
     }
 }

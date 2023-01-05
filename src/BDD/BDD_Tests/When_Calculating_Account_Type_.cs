@@ -23,14 +23,14 @@ public class When_Calculating_Account_Type_with_no_trips_
 public class When_Calculating_Account_Type_less_than_5000_trips_
 {
     private Account _act;
-    private TripService serv = new TripService();
+    private BookingService serv = new BookingService();
 
     public When_Calculating_Account_Type_less_than_5000_trips_()
     {
         List<Trip> trips = new List<Trip>()
         {
-            serv.Purchase(1000),
-            serv.Purchase(500)
+            serv.Reserve(1000),
+            serv.Reserve(500)
         };
         _act = new Account("123", trips);
     }
@@ -52,16 +52,16 @@ public class When_Calculating_Account_Type_less_than_5000_trips_
 public class When_Calculating_Account_Type_between_5000_to_10000_Points_
 {
     private Account _act;
-    private TripService serv = new TripService();
+    private BookingService serv = new BookingService();
 
     public When_Calculating_Account_Type_between_5000_to_10000_Points_()
     {
         List<Trip> trips = new List<Trip>()
         {
-            serv.Purchase(1000),
-            serv.Purchase(500),
-            serv.Purchase(2000),
-            serv.Purchase(3000)
+            serv.Reserve(1000),
+            serv.Reserve(500),
+            serv.Reserve(2000),
+            serv.Reserve(3000)
         };
         _act = new Account("123", trips);
     }
@@ -83,15 +83,15 @@ public class When_Calculating_Account_Type_between_5000_to_10000_Points_
 public class When_Calculating_AccountType_with_more_than_10000_trips_
 {
     private Account _act;
-    private TripService serv = new TripService();
+    private BookingService serv = new BookingService();
     public When_Calculating_AccountType_with_more_than_10000_trips_()
     {
         List<Trip> trips = new List<Trip>()
         {
-            serv.Purchase(2000),
-            serv.Purchase(7000),
-            serv.Purchase(10000),
-            serv.Purchase(500)
+            serv.Reserve(2000),
+            serv.Reserve(7000),
+            serv.Reserve(10000),
+            serv.Reserve(500)
         };
         _act = new Account("123", trips);
     }

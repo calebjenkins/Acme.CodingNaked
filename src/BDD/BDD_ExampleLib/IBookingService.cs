@@ -2,7 +2,7 @@
 
 namespace BDD_ExampleLib;
 
-public interface ITripService
+public interface IBookingService
 {
-    Trip Purchase(int Points);
+    Trip Reserve(int Points);
 }

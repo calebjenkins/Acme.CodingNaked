@@ -1,76 +1,41 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata.Ecma335;
+﻿namespace BDD_ExampleLib.Models;
 
-namespace BDD_ExampleLib.Models;
-
-public record Account(string AccountNumber, List<Trip> Trips)
+public record Account
 {
-    int CalculateTotalTripPoints()
+    public Account(string AccountNumber, List<Trip> Trips)
     {
-         return Trips.Sum(x => x.Points);
-
-        //var total = 0;
-        //foreach (var trip in Trips)
-        //{
-        //    total += trip.Points;
-        //}
-        //return total;
+        this .AccountNumber = AccountNumber;
+        this .Trips = Trips;
+        CalculateAccountType();
     }
+    public string AccountNumber { get; private init;}
+    public List<Trip> Trips { get; private set; }
 
     public AccountType CalculateAccountType()
     {
-        var points = CalculateTotalTripPoints();
+        var points = Trips.Sum(x => x.Points);
+
         switch (points)
         {
-            case > 10000:
-                return AccountType.Gold;
-
-            case > 5000:
-                return AccountType.Silver;
-
+            case > 1000:
+                Status = AccountType.Gold; break;
+            case > 500:
+                Status = AccountType.Silver; break;
             default:
-                return AccountType.Standard;
+                Status = AccountType.Standard; break;
         }
+
+        return Status;
     }
 
-    public decimal CalculateTripPrice(Trip trip)
+    public AccountType Status { get; private set; } = AccountType.Standard;
+
+    public void PurchaseTrip(Trip trip)
     {
-        decimal pricePerPoint = calculateCostPerPoint();
-        decimal price = trip.Points * pricePerPoint;
+        // We would reject a trip with an existing conf code.. but demos.
 
-        return price;
-    }
-
-    public DateTime Now { private get; set; } = DateTime.Now;
-    public Func<DateTime> FunNow { get; set; } = () => DateTime.Now;
-
-    public decimal DiscountAmount()
-    {
-        var dtNow = DateTime.Now;
-        dtNow = Now; // Property Injection
-        dtNow = FunNow(); // Public Func
-
-        // On Weekends, there is a $25 discount
-        return dtNow.DayOfWeek == DayOfWeek.Saturday || dtNow.DayOfWeek == DayOfWeek.Sunday ?
-            25.17m : 0.0m;
-    }
-
-    private decimal calculateCostPerPoint()
-    {
-        var accType = CalculateAccountType();
-        var discount = DiscountAmount();
-
-        switch (accType)
-        {
-            case AccountType.Gold:
-                return 300.00m - discount;
-
-            case AccountType.Silver:
-                return 350.00m - discount;
-
-            case AccountType.Standard:
-            default:
-                return 400.00m - discount;
-        }
+        Trips.Add(trip);
+        CalculateAccountType();
     }
 }
+
