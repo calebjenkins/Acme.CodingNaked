@@ -17,9 +17,9 @@ public record Account
 
         switch (points)
         {
-            case > 1000:
+            case > Ref.GoldPointsThreashold:
                 Status = AccountType.Gold; break;
-            case > 500:
+            case > Ref.SilverPointsThreashold:
                 Status = AccountType.Silver; break;
             default:
                 Status = AccountType.Standard; break;

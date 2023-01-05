@@ -28,14 +28,14 @@ public class AccountService : IAccountService
         switch (accountType)
         {
             case AccountType.Gold:
-                return (30.00m * trip.Points) - discount;
+                return (Ref.GoldPricePerPoint * trip.Points) - discount;
 
             case AccountType.Silver:
-                return (35.00m * trip.Points) - discount;
+                return (Ref.SilverPricePerPoint * trip.Points) - discount;
 
             case AccountType.Standard:
             default:
-                return (40.00m * trip.Points) - discount;
+                return (Ref.StandardPricePerPoint * trip.Points) - discount;
         }
     }
 
@@ -44,9 +44,10 @@ public class AccountService : IAccountService
         var dtNow = DateTime.Now;
         dtNow = dtProvider.Now();   // Using a "provider class"
         dtNow = funcDt();           // Passing in a Func
+      //-- You would never use both of these - pick one! 
 
         // On Weekends, there is a $25 discount
         return dtNow.DayOfWeek == DayOfWeek.Saturday || dtNow.DayOfWeek == DayOfWeek.Sunday ?
-            25.00m : 0.0m;
+            Ref.WeekendDiscountAmount : 0.0m;
     }
 }

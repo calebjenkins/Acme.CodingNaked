@@ -1,6 +1,4 @@
-﻿using BDD_ExampleLib.Models;
-
-namespace BDD_Tests.Accounts;
+﻿namespace BDD_Tests.Accounts;
 
 public class When_Calculating_Account_Type_between_500_to_1000_Points_
 {

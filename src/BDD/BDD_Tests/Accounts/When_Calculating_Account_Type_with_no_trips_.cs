@@ -1,5 +1,3 @@
-using BDD_ExampleLib.Models;
-
 namespace BDD_Tests.Accounts;
 
 public class When_Calculating_Account_Type_with_no_trips_

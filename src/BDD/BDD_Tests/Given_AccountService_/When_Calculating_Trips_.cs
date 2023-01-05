@@ -2,34 +2,38 @@ using BDD_ExampleLib.Models;
 
 namespace BDD_Tests.Given_AccountService_;
 
-public class When_CalculateTripPriceForAccount_StandardStatus_NoDiscount_
+public class When_CalculateTripPriceForAccount_StandardStatus_
 {
     private AccountService _serv;
     IDateTimeProvider _dtProvider;
     Func<DateTime> _funcDt = () => DateTime.Now;
 
     // When
-    public When_CalculateTripPriceForAccount_StandardStatus_NoDiscount_()
+    public When_CalculateTripPriceForAccount_StandardStatus_()
     {
         _dtProvider = new DateTimeProvider();
         _serv = new AccountService(_dtProvider, _funcDt);
     }
 
     [Fact]
-    public void Should_return_TwentyThousand()
+    public void with_NoDiscount_Should_return_BaseAmount()
     {
-        // No Discount
-        var acct = new Account("123", new List<Trip>());
-        var trip = new Trip(500, "abc", Common.Wednesday, Common.Wednesday);
+        // No Discount // No Status * 500 points
+        var acct = TestCommon.StandardAccount;
+        var trip = TestCommon.TripToBuy;
         var results = _serv.CalculateTripPriceForAccount(acct, trip);
-        results.Should().Be(20000.00m);
+        results.Should().Be(TestCommon.BasePrice);
+    }
+
+    [Fact]
+    public void with_WeekendDiscount_Should_return_BaseAmount_Less_DiscountAmount()
+    {
+        // Weekend Discount // No Status * 500 points
+        _serv = new AccountService(_dtProvider, ()=> TestCommon.Sunday);
+        var acct = TestCommon.StandardAccount;
+        var trip = TestCommon.TripToBuy;
+
+        var results = _serv.CalculateTripPriceForAccount(acct, trip);
+        results.Should().Be(19975.00m);
     }
 }
-
-public static class Common
-{
-    public static DateTime Sunday = new DateTime(2023, 1, 1);
-    public static DateTime Wednesday = new DateTime(2023, 1, 4);
-}
-
-

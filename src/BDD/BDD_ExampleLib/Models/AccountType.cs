@@ -1,4 +1,4 @@
-﻿namespace BDD_ExampleLib;
+﻿namespace BDD_ExampleLib.Models;
 
 public enum AccountType
 {
