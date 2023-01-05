@@ -14,8 +14,8 @@ var Wednesday = new DateTime(2023, 1, 4);
             });
 
         //x.For<Func<DateTime>>().Add(() => Sunday);
-        //x.For<Func<DateTime>>().Add(() => DateTime.Now);
-        x.For<Func<DateTime>>().Add(DateTimeProvider.DateTimeNow);
+        x.For<Func<DateTime>>().Add(() => DateTime.Now);
+       // x.For<Func<DateTime>>().Add(DateTimeProvider.DateTimeNow);
 });
 #endregion
 
@@ -53,7 +53,7 @@ for(int x= 1; x <= 10; x++)
 ConsoleExt.Line();
 Console.ReadLine();
 
-Console.WriteLine();
+//Console.WriteLine();
 ConsoleExt.Label("Trips with TimeStamps");
 foreach(Trip tr in trips)
 {
@@ -65,4 +65,5 @@ ConsoleExt.Line();
 Console.WriteLine(act);
 ConsoleColor.Yellow.WriteLine("My Price: " + accountServ.CalculateTripPriceForAccount(act, trip));
 
+ConsoleExt.Label("The End");
 Console.ReadLine();
