@@ -19,7 +19,7 @@ namespace BDD_Specs.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AccontFeature : object, Xunit.IClassFixture<AccontFeature.FixtureData>, System.IDisposable
+    public partial class AccountCanCalculateAccountTypeFeature : object, Xunit.IClassFixture<AccountCanCalculateAccountTypeFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace BDD_Specs.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Accont.feature"
+#line 1 "Account.feature"
 #line hidden
         
-        public AccontFeature(AccontFeature.FixtureData fixtureData, BDD_Specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AccountCanCalculateAccountTypeFeature(AccountCanCalculateAccountTypeFeature.FixtureData fixtureData, BDD_Specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace BDD_Specs.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Accont", "A short summary of the feature", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Account can calculate Account Type", "A record for handeling Accounts", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,17 +80,21 @@ namespace BDD_Specs.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="[scenario name]")]
-        [Xunit.TraitAttribute("FeatureTitle", "Accont")]
-        [Xunit.TraitAttribute("Description", "[scenario name]")]
-        [Xunit.TraitAttribute("Category", "tag1")]
-        public virtual void ScenarioName()
+        [Xunit.SkippableFactAttribute(DisplayName="Account calculates Account Type")]
+        [Xunit.TraitAttribute("FeatureTitle", "Account can calculate Account Type")]
+        [Xunit.TraitAttribute("Description", "Account calculates Account Type")]
+        [Xunit.TraitAttribute("Category", "bdd,")]
+        [Xunit.TraitAttribute("Category", "specFlow,")]
+        [Xunit.TraitAttribute("Category", "codingNaked")]
+        public virtual void AccountCalculatesAccountType()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "bdd,",
+                    "specFlow,",
+                    "codingNaked"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account calculates Account Type", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -110,14 +114,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("[context]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 8
- testRunner.When("[action]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("an Account with No Trips", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.Then("[outcome]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("calculating account type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 10
+ testRunner.Then("result should be AccountType.Standard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -130,12 +134,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                AccontFeature.FeatureSetup();
+                AccountCanCalculateAccountTypeFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                AccontFeature.FeatureTearDown();
+                AccountCanCalculateAccountTypeFeature.FeatureTearDown();
             }
         }
     }

@@ -142,7 +142,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Trip value is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 18
- testRunner.Then("the result should be BasePrice less WeekendDiscountAmount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be BasePrice-WeekendDiscount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -195,7 +195,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Trip value is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 27
- testRunner.Then("the result should be SilverPricePerPoint times trip points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be SilverPriceTimesPoints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 29
  testRunner.Given("an Account with Silver Status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -210,8 +210,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Trip value is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
- testRunner.Then("the result should be SilverPricePerPoint times trip points less WeekendDiscountAm" +
-                        "ount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be SilverPriceTimesPoints-WeekendDiscount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -264,7 +263,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Trip value is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 42
- testRunner.Then("the result should be GoldPricePerPoint times trip points", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be GoldPriceTimesPoints", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 44
  testRunner.Given("an Account with Gold Status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
@@ -279,8 +278,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("Trip value is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 48
- testRunner.Then("the result should be GoldPricePerPoint times trip points less WeekendDiscountAmou" +
-                        "nt", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the result should be GoldPriceTimesPoints-WeekendDiscount", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

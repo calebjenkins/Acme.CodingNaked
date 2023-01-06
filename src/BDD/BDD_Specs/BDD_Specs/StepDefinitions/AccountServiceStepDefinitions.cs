@@ -56,7 +56,27 @@ public class AccountServiceStepDefinitions
     [Then("the result should be (.*)")]
     public void ThenTheResultShouldBe(string result)
     {
-        model.Results.Should().Be(2000.00m);
+        switch (result)
+        {
+            case "BasePrice":
+                model.Results.Should().Be(TestCommon.BasePrice);
+                break;
+            case "BasePrice-WeekendDiscount":
+                model.Results.Should().Be(TestCommon.BasePrice - Ref.WeekendDiscountAmount);
+                break;
+            case "SilverPriceTimesPoints":
+                model.Results.Should().Be(Ref.SilverPricePerPoint * TestCommon.TripToBuy.Points);
+                break;
+            case "SilverPriceTimesPoints-WeekendDiscount":
+                model.Results.Should().Be(Ref.SilverPricePerPoint * TestCommon.TripToBuy.Points - Ref.WeekendDiscountAmount);
+                break;
+            case "GoldPriceTimesPoints":
+                model.Results.Should().Be(Ref.GoldPricePerPoint * TestCommon.TripToBuy.Points);
+                break;
+            case "GoldPriceTimesPoints-WeekendDiscount":
+                model.Results.Should().Be(Ref.GoldPricePerPoint * TestCommon.TripToBuy.Points - Ref.WeekendDiscountAmount);
+                break;
+        }
     }
 
     private Account GetAccount(AccountType Status)
@@ -74,12 +94,4 @@ public class AccountServiceStepDefinitions
                 throw new Exception("AccountType not found");
         }
     }
-}
-
-public class AccountServiceStepsModel
-{
-    public AccountType AccountType { get; set; } = AccountType.Standard;
-    public IAccountService AccountServ { get; set; } = new AccountService(new DateTimeProvider(), () => TestCommon.Wednesday);
-    public int TripPoints { get; set; } = 500;
-    public decimal Results { get; set; }
 }
