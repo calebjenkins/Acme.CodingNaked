@@ -9,13 +9,13 @@ Scenario: Calculating Trip Price - Standard Status
 	And the Trip has 500 points
 	And its not a weekend
 	When Trip value is calculated
-	Then the result should be TestCommon.BasePrice
+	Then the result should be BasePrice
 
 	Given an Account with Standard Status
 	And the Trip has 500 points
 	And it IS a weekend
 	When Trip value is calculated
-	Then the result should be TestCommon.BasePrice - Ref.WeekendDiscountAmount
+	Then the result should be BasePrice less WeekendDiscountAmount
 
 
 @bdd, @specFlow, @codingNaked
@@ -24,13 +24,13 @@ Scenario: Calculating Trip Price - Silver Status
 	And the Trip has 500 points
 	And its not a weekend
 	When Trip value is calculated
-	Then the result should be Ref.SilverPricePerPoint * trip.Points
+	Then the result should be SilverPricePerPoint times trip points
 
 	Given an Account with Silver Status
 	And the Trip has 500 points
 	And it IS a weekend
 	When Trip value is calculated
-	Then the result should be Ref.SilverPricePerPoint * trip.Points - Ref.WeekendDiscountAmount
+	Then the result should be SilverPricePerPoint times trip points less WeekendDiscountAmount
 
 
 @bdd, @specFlow, @codingNaked
@@ -39,10 +39,10 @@ Scenario: Calculating Trip Price - Gold Status
 	And the Trip has 500 points
 	And its not a weekend
 	When Trip value is calculated
-	Then the result should be Ref.GoldPricePerPoint * trip.Points
+	Then the result should be GoldPricePerPoint times trip points
 
 	Given an Account with Gold Status
 	And the Trip has 500 points
 	And it IS a weekend
 	When Trip value is calculated
-	Then the result should be Ref.GoldPricePerPoint * trip.Points - Ref.WeekendDiscountAmount
+	Then the result should be GoldPricePerPoint times trip points less WeekendDiscountAmount
