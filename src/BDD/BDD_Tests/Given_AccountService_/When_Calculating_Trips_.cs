@@ -34,6 +34,6 @@ public class When_CalculateTripPriceForAccount_StandardStatus_
         var trip = TestCommon.TripToBuy;
 
         var results = _serv.CalculateTripPriceForAccount(acct, trip);
-        results.Should().Be(19975.00m);
+        results.Should().Be(TestCommon.BasePrice - Ref.WeekendDiscountAmount);
     }
 }

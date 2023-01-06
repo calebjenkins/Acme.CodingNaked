@@ -13,8 +13,8 @@ var Wednesday = new DateTime(2023, 1, 4);
             s.AssemblyContainingType<Account>();
             });
 
-        x.For<Func<DateTime>>().Add(() => Sunday);
-        //x.For<Func<DateTime>>().Add(() => DateTime.Now);
+       // x.For<Func<DateTime>>().Add(() => Sunday);
+       x.For<Func<DateTime>>().Add(() => DateTime.Now);
        // x.For<Func<DateTime>>().Add(DateTimeProvider.DateTimeNow);
 });
 #endregion
