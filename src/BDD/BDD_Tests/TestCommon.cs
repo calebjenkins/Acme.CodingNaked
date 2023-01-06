@@ -1,4 +1,4 @@
-﻿namespace BDD_Tests.Given_AccountService_;
+﻿namespace BDD_Tests;
 
 public static class TestCommon
 {
