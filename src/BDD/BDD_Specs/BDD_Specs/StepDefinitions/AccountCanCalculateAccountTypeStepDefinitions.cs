@@ -2,6 +2,11 @@ using System;
 using System.Reflection.Metadata;
 using TechTalk.SpecFlow;
 
+// SpecFlow: generate report:
+// > dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+// > livingdoc test-assembly SpecFlowCalculator.Specs.dll -t TestExecution.json 
+
+
 namespace BDD_Specs.StepDefinitions
 {
     [Binding]
