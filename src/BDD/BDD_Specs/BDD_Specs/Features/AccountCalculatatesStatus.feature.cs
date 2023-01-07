@@ -89,10 +89,10 @@ namespace BDD_Specs.Features
         [Xunit.InlineDataAttribute("0", "Standard", new string[0])]
         [Xunit.InlineDataAttribute("10", "Standard", new string[0])]
         [Xunit.InlineDataAttribute("499", "Standard", new string[0])]
-        [Xunit.InlineDataAttribute("501", "Silver", new string[0])]
+        [Xunit.InlineDataAttribute("500", "Silver", new string[0])]
         [Xunit.InlineDataAttribute("550", "Silver", new string[0])]
         [Xunit.InlineDataAttribute("999", "Silver", new string[0])]
-        [Xunit.InlineDataAttribute("1001", "Gold", new string[0])]
+        [Xunit.InlineDataAttribute("1000", "Gold", new string[0])]
         [Xunit.InlineDataAttribute("1200", "Gold", new string[0])]
         public virtual void AccountCalculatesAccountStatus(string points, string accountStatus, string[] exampleTags)
         {

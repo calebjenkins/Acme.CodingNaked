@@ -14,10 +14,10 @@ Scenario: Account calculates Account Status
 		| 0      | Standard    |
 		| 10     | Standard    |
 		| 499    | Standard    |
-		| 501    | Silver      |
+		| 500    | Silver      |
 		| 550    | Silver      |
 		| 999    | Silver      |
-		| 1001   | Gold        |
+		| 1000   | Gold        |
 		| 1200   | Gold        |
 
 	

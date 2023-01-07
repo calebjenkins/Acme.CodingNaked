@@ -14,9 +14,9 @@ namespace BDD_Specs.StepDefinitions
             model = Model;
         }
         [Given(@"an Account with trips worth (.*) points")]
-        public void GivenAnAccountWithTripsWorthPoints(int p0)
+        public void GivenAnAccountWithTripsWorthPoints(int points)
         {
-            var t = new Trip(p0, "abc", TestCommon.Wednesday, TestCommon.Wednesday);
+            var t = new Trip(points, "abc", TestCommon.Wednesday, TestCommon.Wednesday);
             model.Account = new Account("123", new List<Trip> { t });
         }
 
