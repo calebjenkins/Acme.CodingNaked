@@ -28,7 +28,7 @@ namespace BDD_Specs.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "Account.feature"
+#line 1 "AccountCalculatatesStatus.feature"
 #line hidden
         
         public AccountCanCalculateAccountTypeFeature(AccountCanCalculateAccountTypeFeature.FixtureData fixtureData, BDD_Specs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
@@ -80,20 +80,35 @@ namespace BDD_Specs.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Account calculates Account Type")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Account calculates Account Status")]
         [Xunit.TraitAttribute("FeatureTitle", "Account can calculate Account Type")]
-        [Xunit.TraitAttribute("Description", "Account calculates Account Type")]
+        [Xunit.TraitAttribute("Description", "Account calculates Account Status")]
         [Xunit.TraitAttribute("Category", "bdd,")]
         [Xunit.TraitAttribute("Category", "specFlow,")]
         [Xunit.TraitAttribute("Category", "codingNaked")]
-        public virtual void AccountCalculatesAccountType()
+        [Xunit.InlineDataAttribute("0", "Standard", new string[0])]
+        [Xunit.InlineDataAttribute("10", "Standard", new string[0])]
+        [Xunit.InlineDataAttribute("499", "Standard", new string[0])]
+        [Xunit.InlineDataAttribute("501", "Silver", new string[0])]
+        [Xunit.InlineDataAttribute("550", "Silver", new string[0])]
+        [Xunit.InlineDataAttribute("999", "Silver", new string[0])]
+        [Xunit.InlineDataAttribute("1001", "Gold", new string[0])]
+        [Xunit.InlineDataAttribute("1200", "Gold", new string[0])]
+        public virtual void AccountCalculatesAccountStatus(string points, string accountStatus, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "bdd,",
                     "specFlow,",
                     "codingNaked"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account calculates Account Type", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            argumentsOfScenario.Add("points", points);
+            argumentsOfScenario.Add("accountStatus", accountStatus);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Account calculates Account Status", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -115,13 +130,13 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 8
- testRunner.Given("an Account with No Trips", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("an Account with trips worth {0} points", points), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
- testRunner.When("calculating account type", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("calculating account Status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
- testRunner.Then("result should be AccountType.Standard", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then(string.Format("account status should be {0}", accountStatus), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

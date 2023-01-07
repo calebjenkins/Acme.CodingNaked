@@ -1,0 +1,37 @@
+using System;
+using System.Reflection.Metadata;
+using TechTalk.SpecFlow;
+
+namespace BDD_Specs.StepDefinitions
+{
+    [Binding]
+    public class AccountCanCalculateAccountTypeStepDefinitions
+    {
+        AccountCanCalculateModel model;
+
+        public AccountCanCalculateAccountTypeStepDefinitions(AccountCanCalculateModel Model)
+        {
+            model = Model;
+        }
+        [Given(@"an Account with trips worth (.*) points")]
+        public void GivenAnAccountWithTripsWorthPoints(int p0)
+        {
+            var t = new Trip(p0, "abc", TestCommon.Wednesday, TestCommon.Wednesday);
+            model.Account = new Account("123", new List<Trip> { t });
+        }
+
+        [When("calculating account Status")]
+        public void WhenCalculatingAccountStatus()
+        {
+            model.Status = model?.Account?.CalculateAccountType();
+        }
+
+        [Then(@"account status should be (.*)")]
+        public void ThenAccountStatusShouldBeStandard(string status)
+        {
+            var stat = status.Parse<AccountType>(ignoreCase: true);
+            status.Should().NotBeNull();
+            model.Status.Should().Be(stat);
+        }
+    }
+}
