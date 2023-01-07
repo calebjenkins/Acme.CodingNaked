@@ -32,7 +32,7 @@ jobs:
     - name: Run SpecFlow Tests
       uses: cryptic-wizard/run-specflow-tests@v1.3.1
       with:
-        test-assembly-path: src/BDD/BDD_Specs/bin/Release/net6.0
+        test-assembly-path: src/BDD/BDD_Specs/BDD_Specs/bin/Release/net6.0
         test-assembly-dll: BDD_Specs.dll
         output-html: MyTestResults.html
 
