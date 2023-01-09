@@ -4,12 +4,15 @@ using Moq;
 
 namespace WithExtensionsLib.Tests
 {
+
+    // Hat Tip Adam Storr
+    // Awesome Extension Method for Verifying via https://adamstorr.azurewebsites.net/blog/mocking-ilogger-with-moq
+    // https://github.com/WestDiscGolf/Random
+
     public static class MoqLoggingExtensions
     {
-        // Hat Tip Adam Storr
-        // Awesome Extension Method for Verifying via https://adamstorr.azurewebsites.net/blog/mocking-ilogger-with-moq
-        // https://github.com/WestDiscGolf/Random
-        public static Mock<ILogger> VerifyLogging(this Mock<ILogger> logger, string expectedMessage, LogLevel expectedLogLevel = LogLevel.Debug, Times? times = null)
+        public static Mock<ILogger> VerifyLogging(this Mock<ILogger> logger, string expectedMessage,
+            LogLevel expectedLogLevel = LogLevel.Debug, Times? times = null)
         {
             times ??= Times.Once();
 
@@ -25,7 +28,9 @@ namespace WithExtensionsLib.Tests
 
             return logger;
         }
-        public static Mock<ILogger<T>> VerifyLogging<T>(this Mock<ILogger<T>> logger, string expectedMessage, LogLevel expectedLogLevel = LogLevel.Debug, Times? times = null)
+
+        public static Mock<ILogger<T>> VerifyLogging<T>(this Mock<ILogger<T>> logger, string expectedMessage,
+            LogLevel expectedLogLevel = LogLevel.Debug, Times? times = null)
         {
             times ??= Times.Once();
 
